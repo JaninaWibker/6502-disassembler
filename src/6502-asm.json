@@ -1,0 +1,409 @@
+{
+  "adc": [
+    [ "Immediate",    "legal", "ADC #$??", "69", "2", "2" ],
+    [ "Zero Page",    "legal", "ADC $??", "65", "2", "3" ],
+    [ "Zero Page,X",  "legal", "ADC $??,X", "75", "2", "4" ],
+    [ "Absolute",     "legal", "ADC $????", "6D", "3", "4" ],
+    [ "Absolute,X",   "legal", "ADC $????,X", "7D", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "ADC $????,Y", "79", "3", "4+" ],
+    [ "Indirect,X",   "legal", "ADC ($??,X)", "61", "2", "6" ],
+    [ "Indirect,Y",   "legal", "ADC ($??),Y", "71", "2", "5+" ]
+  ],
+  "and": [
+    [ "Immediate",    "legal", "AND #$??", "29", "2", "2" ],
+    [ "Zero Page",    "legal", "AND $??", "25", "2", "3" ],
+    [ "Zero Page,X",  "legal", "AND $??,X", "35", "2", "4" ],
+    [ "Absolute",     "legal", "AND $????", "2D", "3", "4" ],
+    [ "Absolute,X",   "legal", "AND $????,X", "3D", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "AND $????,Y", "39", "3", "4+" ],
+    [ "Indirect,X",   "legal", "AND ($??,X)", "21", "2", "6" ],
+    [ "Indirect,Y",   "legal", "AND ($??),Y", "31", "2", "5+" ]
+  ],
+  "asl": [
+    [ "Accumulator",  "legal", "ASL A", "0A", "1", "2" ],
+    [ "Zero Page",    "legal", "ASL $??", "06", "2", "5" ],
+    [ "Zero Page,X",  "legal", "ASL $??,X", "16", "2", "6" ],
+    [ "Absolute",     "legal", "ASL $????", "0E", "3", "6" ],
+    [ "Absolute,X",   "legal", "ASL $????,X", "1E", "3", "7" ]
+  ],
+  "bit": [
+    [ "Zero Page",    "legal", "BIT $??", "24", "2", "3" ],
+    [ "Absolute",     "legal", "BIT $????", "2C", "3", "4" ]
+  ],
+  "brk": [
+    [ "Implied",      "legal", "BRK", "00", "1", "7" ]
+  ],
+  "cmp": [
+    [ "Immediate",    "legal", "CMP #$??", "C9", "2", "2" ],
+    [ "Zero Page",    "legal", "CMP $??", "C5", "2", "3" ],
+    [ "Zero Page,X",  "legal", "CMP $??,X", "D5", "2", "4" ],
+    [ "Absolute",     "legal", "CMP $????", "CD", "3", "4" ],
+    [ "Absolute,X",   "legal", "CMP $????,X", "DD", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "CMP $????,Y", "D9", "3", "4+" ],
+    [ "Indirect,X",   "legal", "CMP ($??,X)", "C1", "2", "6" ],
+    [ "Indirect,Y",   "legal", "CMP ($??),Y", "D1", "2", "5+" ]
+  ],
+  "cpx": [
+    [ "Immediate",    "legal", "CPX #$??", "E0", "2", "2" ],
+    [ "Zero Page",    "legal", "CPX $??", "E4", "2", "3" ],
+    [ "Absolute",     "legal", "CPX $????", "EC", "3", "4" ]
+  ],
+  "cpy": [
+    [ "Immediate",    "legal", "CPY #$??", "C0", "2", "2" ],
+    [ "Zero Page",    "legal", "CPY $??", "C4", "2", "3" ],
+    [ "Absolute",     "legal", "CPY $????", "CC", "3", "4" ]
+  ],
+  "dec": [
+    [ "Zero Page",    "legal", "DEC $??", "C6", "2", "5" ],
+    [ "Zero Page,X",  "legal", "DEC $??,X", "D6", "2", "6" ],
+    [ "Absolute",     "legal", "DEC $????", "CE", "3", "6" ],
+    [ "Absolute,X",   "legal", "DEC $????,X", "DE", "3", "7" ]
+  ],
+  "eor": [
+    [ "Immediate",    "legal", "EOR #$??", "49", "2", "2" ],
+    [ "Zero Page",    "legal", "EOR $??", "45", "2", "3" ],
+    [ "Zero Page,X",  "legal", "EOR $??,X", "55", "2", "4" ],
+    [ "Absolute",     "legal", "EOR $????", "4D", "3", "4" ],
+    [ "Absolute,X",   "legal", "EOR $????,X", "5D", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "EOR $????,Y", "59", "3", "4+" ],
+    [ "Indirect,X",   "legal", "EOR ($??,X)", "41", "2", "6" ],
+    [ "Indirect,Y",   "legal", "EOR ($??),Y", "51", "2", "5+"
+    ]
+  ],
+  "inc": [
+    [ "Zero Page",    "legal", "INC $??", "E6", "2", "5" ],
+    [ "Zero Page,X",  "legal", "INC $??,X", "F6", "2", "6" ],
+    [ "Absolute",     "legal", "INC $????", "EE", "3", "6" ],
+    [ "Absolute,X",   "legal", "INC $????,X", "FE", "3", "7" ]
+  ],
+  "jmp": [
+    [ "Absolute",     "legal", "JMP $5597", "4C", "3", "3" ],
+    [ "Indirect",     "legal", "JMP ($5597)", "6C", "3", "5" ]
+  ],
+  "jsr": [
+    [ "Absolute",     "legal", "JSR $5597", "20", "3", "6" ]
+  ],
+  "lda": [
+    [ "Immediate",    "legal", "LDA #$??", "A9", "2", "2" ],
+    [ "Zero Page",    "legal", "LDA $??", "A5", "2", "3" ],
+    [ "Zero Page,X",  "legal", "LDA $??,X", "B5", "2", "4" ],
+    [ "Absolute",     "legal", "LDA $????", "AD", "3", "4" ],
+    [ "Absolute,X",   "legal", "LDA $????,X", "BD", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "LDA $????,Y", "B9", "3", "4+" ],
+    [ "Indirect,X",   "legal", "LDA ($??,X)", "A1", "2", "6" ],
+    [ "Indirect,Y",   "legal", "LDA ($??),Y", "B1", "2", "5+" ]
+  ],
+  "ldx": [
+    [ "Immediate",    "legal", "LDX #$??", "A2", "2", "2" ],
+    [ "Zero Page",    "legal", "LDX $??", "A6", "2", "3" ],
+    [ "Zero Page,Y",  "legal", "LDX $??,Y", "B6", "2", "4" ],
+    [ "Absolute",     "legal", "LDX $????", "AE", "3", "4" ],
+    [ "Absolute,Y",   "legal", "LDX $????,Y", "BE", "3", "4+" ]
+  ],
+  "ldy": [
+    [ "Immediate",    "legal", "LDY #$??", "A0", "2", "2" ],
+    [ "Zero Page",    "legal", "LDY $??", "A4", "2", "3" ],
+    [ "Zero Page,X",  "legal", "LDY $??,X", "B4", "2", "4" ],
+    [ "Absolute",     "legal", "LDY $????", "AC", "3", "4" ],
+    [ "Absolute,X",   "legal", "LDY $????,X", "BC", "3", "4+" ]
+  ],
+  "lsr": [
+    [ "Accumulator",  "legal", "LSR A", "4A", "1", "2" ],
+    [ "Zero Page",    "legal", "LSR $??", "46", "2", "5" ],
+    [ "Zero Page,X",  "legal", "LSR $??,X", "56", "2", "6" ],
+    [ "Absolute",     "legal", "LSR $????", "4E", "3", "6" ],
+    [ "Absolute,X",   "legal", "LSR $????,X", "5E", "3", "7" ]
+  ],
+  "nop": [
+    [ "Implied",      "legal",    "NOP",   "EA", "1", "2" ],
+    [ "Zero Page",    "illegal",  "NOP $??", "04", "2", "2" ],
+    [ "Implied",      "illegal",  "NOP", "1A", "1", "2" ],
+    [ "Zero Page,X",  "illegal",  "NOP $??,x", "14", "2", "2" ],
+    [ "Absolute",     "illegal",  "NOP $????", "0C", "3", "2" ],
+    [ "Absolute,X",   "illegal",  "NOP $????,x", "1C", "3", "2" ],
+    [ "Implied",      "illegal",  "NOP", "3A", "1", "2" ],
+    [ "Zeropage,X",   "illegal",  "NOP $??,x", "34", "1", "2" ],
+    [ "Absolute,X",   "illegal",  "NOP $????,x", "3C", "3", "2" ],
+    [ "Zero Page",    "illegal",  "NOP ", "44", "2", "2" ],
+    [ "Zero Page,X",  "illegal",  "NOP $??,x", "54", "2", "2" ],
+    [ "Implied",      "illegal",  "NOP", "5A", "1", "2" ],
+    [ "Absolute,X",   "illegal",  "NOP $????,x", "5C", "3", "2" ],
+    [ "Zero Page",    "illegal",  "NOP ", "64", "2", "2" ],
+    [ "Zero Page,X",  "illegal",  "NOP $??,x", "74", "2", "2" ],
+    [ "Implied",      "illegal",  "NOP", "7A", "1", "2" ],
+    [ "Absolute,X",   "illegal",  "NOP $????,x", "7C", "3", "2" ],
+    [ "Implied",      "illegal",  "NOP", "80", "2", "2" ],
+    [ "Immediate",    "illegal",  "NOP #$??", "82", "2", "2" ],
+    [ "Immediate",    "illegal",  "NOP #$??", "89", "2", "2" ],
+    [ "Immediate",    "illegal",  "NOP #$??", "C2", "2", "2" ],
+    [ "Implied",      "illegal",  "NOP ", "DA", "1", "2" ],
+    [ "Absolute,X",   "illegal",  "NOP $????,x", "DC", "3", "2" ],
+    [ "Zero Page,X",  "illegal",  "NOP $??,x", "D4", "2", "2" ],
+    [ "Immediate",    "illegal",  "NOP #$??", "E2", "2", "2" ],
+    [ "Implied",      "illegal",  "NOP", "FA", "1", "2" ],
+    [ "Zero Page,X",  "illegal",  "NOP $??,x", "F4", "2", "2" ],
+    [ "Absolute,X",   "illegal",  "NOP $????,x", "FC", "3", "2" ]
+  ],
+  "ora": [
+    [ "Immediate",    "legal", "ORA #$??", "09", "2", "2" ],
+    [ "Zero Page",    "legal", "ORA $??", "05", "2", "3" ],
+    [ "Zero Page,X",  "legal", "ORA $??,X", "15", "2", "4" ],
+    [ "Absolute",     "legal", "ORA $????", "0D", "3", "4" ],
+    [ "Absolute,X",   "legal", "ORA $????,X", "1D", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "ORA $????,Y", "19", "3", "4+" ],
+    [ "Indirect,X",   "legal", "ORA ($??,X)", "01", "2", "6" ],
+    [ "Indirect,Y",   "legal", "ORA ($??),Y", "11", "2", "5+" ]
+  ],
+  "rol": [
+    [ "Accumulator",  "legal", "ROL A", "2A", "1", "2" ],
+    [ "Zero Page",    "legal", "ROL $??", "26", "2", "5" ],
+    [ "Zero Page,X",  "legal", "ROL $??,X", "36", "2", "6" ],
+    [ "Absolute",     "legal", "ROL $????", "2E", "3", "6" ],
+    [ "Absolute,X",   "legal", "ROL $????,X", "3E", "3", "7" ]
+  ],
+  "ror": [
+    [ "Accumulator",  "legal", "ROR A", "6A", "1", "2" ],
+    [ "Zero Page",    "legal", "ROR $??", "66", "2", "5" ],
+    [ "Zero Page,X",  "legal", "ROR $??,X", "76", "2", "6" ],
+    [ "Absolute",     "legal", "ROR $????", "6E", "3", "6" ],
+    [ "Absolute,X",   "legal", "ROR $????,X", "7E", "3", "7" ]
+  ],
+  "rti": [
+    [ "Implied",      "legal", "RTI", "40", "1", "6" ]
+  ],
+  "rts": [
+    [ "Implied",      "legal", "RTS", "60", "1", "6" ]
+  ],
+  "sbc": [
+    [ "Immediate",    "legal", "SBC #$??", "E9", "2", "2" ],
+    [ "Zero Page",    "legal", "SBC $??", "E5", "2", "3" ],
+    [ "Immediate",  "illegal", "SBC #$??", "EB", "2", "" ],
+    [ "Zero Page,X",  "legal", "SBC $??,X", "F5", "2", "4" ],
+    [ "Absolute",     "legal", "SBC $????", "ED", "3", "4" ],
+    [ "Absolute,X",   "legal", "SBC $????,X", "FD", "3", "4+" ],
+    [ "Absolute,Y",   "legal", "SBC $????,Y", "F9", "3", "4+" ],
+    [ "Indirect,X",   "legal", "SBC ($??,X)", "E1", "2", "6" ],
+    [ "Indirect,Y",   "legal", "SBC ($??),Y", "F1", "2", "5+" ]
+  ],
+  "sta": [
+    [ "Zero Page",    "legal", "STA $??", "85", "2", "3" ],
+    [ "Zero Page,X",  "legal", "STA $??,X", "95", "2", "4" ],
+    [ "Absolute",     "legal", "STA $????", "8D", "3", "4" ],
+    [ "Absolute,X",   "legal", "STA $????,X", "9D", "3", "5" ],
+    [ "Absolute,Y",   "legal", "STA $????,Y", "99", "3", "5" ], 
+    [ "Indirec t,X",  "legal", "STA ($??,X)","81","2","6"],
+    [ "Indirect,Y",   "legal", "STA ($??),Y", "91", "2", "6" ]
+  ],
+  "stx": [
+    [ "Zero Page",    "legal", "STX $??", "86", "2", "3" ],
+    [ "Zero Page,Y",  "legal", "STX $??,Y", "96", "2", "4" ],
+    [ "Absolute",     "legal", "STX $????", "8E", "3", "4" ]
+  ],
+  "sty": [
+    [ "Zero Page",    "legal", "STY $??", "84", "2", "3" ],
+    [ "Zero Page,X",  "legal", "STY $??,X", "94", "2", "4" ],
+    [ "Absolute",     "legal", "STY $????", "8C", "3", "4" ]
+  ],
+  "bpl": [
+    [ "Relative",     "legal", "BPL ?$??", "10", "2", "2" ]
+  ],
+  "bmi": [
+    [ "Relative",     "legal", "BMI ?$??", "30", "2", "2" ]
+  ],
+  "bvc": [
+    [ "Relative",     "legal", "BVC ?$??", "50", "2", "2" ]
+  ],
+  "bvs": [
+    [ "Relative",     "legal", "BVS ?$??", "70", "2", "2" ]
+  ],
+  "bcc": [
+    [ "Relative",     "legal", "BCC ?$??", "90", "2", "2" ]
+  ],
+  "bcs": [
+    [ "Relative",     "legal", "BCS ?$??", "B0", "2", "2" ]
+  ],
+  "bne": [
+    [ "Relative",     "legal", "BNE ?$??", "D0", "2", "2" ]
+  ],
+  "beq": [
+    [ "Relative",     "legal", "BEQ ?$??", "F0", "2", "2" ]
+  ],
+  "clc": [
+    [ "Implied",      "legal", "CLC", "18", "1", "2" ]
+  ],
+  "sec": [
+    [ "Implied",      "legal", "SEC", "38", "1", "2" ]
+  ],
+  "cli": [
+    [ "Implied",      "legal", "CLI", "58", "1", "2" ]
+  ],
+  "sei": [
+    [ "Implied",      "legal", "SEI", "78", "1", "2" ]
+  ],
+  "clv": [
+    [ "Implied",      "legal", "CLV", "B8", "1", "2" ]
+  ],
+  "cld": [
+    [ "Implied",      "legal", "CLD", "D8", "1", "2" ]
+  ],
+  "sed": [
+    [ "Implied",      "legal", "SED", "F8", "1", "2" ]
+  ],
+  "tax": [
+    [ "Implied",      "legal", "TAX", "AA", "1", "2" ]
+  ],
+  "txa": [
+    [ "Implied",      "legal", "TXA", "8A", "1", "2" ]
+  ],
+  "dex": [
+    [ "Implied",      "legal", "DEX", "CA", "1", "2" ]
+  ],
+  "inx": [
+    [ "Implied",      "legal", "INX", "E8", "1", "2" ]
+  ],
+  "tay": [
+    [ "Implied",      "legal", "TAY", "A8", "1", "2" ]
+  ],
+  "tya": [
+    [ "Implied",      "legal", "TYA", "98", "1", "2" ]
+  ],
+  "dey": [
+    [ "Implied",      "legal", "DEY", "88", "1", "2" ]
+  ],
+  "iny": [
+    [ "Implied",      "legal", "INY", "C8", "1", "2" ]
+  ],
+  "txs": [
+    [ "Implied",      "legal", "TXS", "9A", "1", "2" ]
+  ],
+  "tsx": [
+    [ "Implied",      "legal", "TSX", "BA", "1", "2" ]
+  ],
+  "pha": [
+    [ "Implied",      "legal", "PHA", "48", "1", "3" ]
+  ],
+  "pla": [
+    [ "Implied",      "legal", "PLA", "68", "1", "4" ]
+  ],
+  "php": [
+    [ "Implied",      "legal", "PHP", "08", "1", "3" ]
+  ],
+  "plp": [
+    [ "Implied",      "legal", "PLP", "28", "1", "4" ]
+  ],
+  "slo": [
+    [ "Zero Page", "illegal", "SLO $??", "07", "2", "" ],
+    [ "Zero Page,X", "illegal", "SLO $??,x", "17", "2", "" ],
+    [ "Indirect,X", "illegal", "SLO ($??,x)", "03", "2", "" ],
+    [ "Indirect,Y", "illegal", "SLO ($??),y", "13", "2", "" ],
+    [ "Absolute", "illegal", "SLO $????", "0F", "3", "" ],
+    [ "Absolute,X", "illegal", "SLO $????,x", "1F", "3", "" ],
+    [ "Absolute,Y", "illegal", "SLO $????,y", "1B", "3", "" ]
+  ],
+  "rla": [
+    [ "Zero Page",    "illegal", "RLA $??", "27", "2", "" ],
+    [ "Zero Page,X",  "illegal", "RLA $??,x", "37", "2", "" ],
+    [ "Indirect,X",   "illegal", "RLA ($??,x)", "23", "2", "" ],
+    [ "Indirect,Y",   "illegal", "RLA $(??),y", "33", "2", "" ],
+    [ "Absolute",     "illegal", "RLA $????", "2F", "3", "" ],
+    [ "Absolute,X",   "illegal", "RLA $????,x", "3F", "3", "" ],
+    [ "Absolute,Y",   "illegal", "RLA $????,y", "3B", "3", "" ]
+  ],
+  "sre": [
+    [ "Zero Page",    "illegal", "SRE $??", "47", "2", "" ],
+    [ "Zero Page,X",  "illegal", "SRE $??,x", "57", "2", "" ],
+    [ "Indirect,X",   "illegal", "SRE ($??,x)", "43", "2", "" ],
+    [ "Indirect,Y",   "illegal", "SRE ($??),y", "53", "2", "" ],
+    [ "Absolute",     "illegal", "SRE $????", "4F", "3", "" ],
+    [ "Absolute,X",   "illegal", "SRE $????,x", "5F", "3", "" ],
+    [ "Absolute,Y",   "illegal", "SRE $????,y", "5B", "3", "" ]
+  ],
+  "rra": [
+    [ "Zero Page",    "illegal", "RRA $??", "67", "2", "" ],
+    [ "Zero Page,X",  "illegal", "RRA $??,x", "77", "2", "" ],
+    [ "Indirect,X",   "illegal", "RRA ($??,x)", "63", "2", "" ],
+    [ "Indirect,Y",   "illegal", "RRA $(??),y", "73", "2", "" ],
+    [ "Absolute",     "illegal", "RRA $????", "6F", "3", "" ],
+    [ "Absolute,X",   "illegal", "RRA $????,x", "7F", "3", "" ],
+    [ "Absolute,Y",   "illegal", "RRA $????,y", "7B", "3", "" ]
+  ],
+  "sax": [
+    [ "Zero Page",    "illegal", "SAX $??", "87", "2", "" ],
+    [ "Indirect,Y",   "illegal", "SAX $??,y", "97", "2", "" ],
+    [ "Indirect,X",   "illegal", "SAX ($??,x)", "83", "2", "" ],
+    [ "Absolute",     "illegal", "SAX $????", "8F", "3", "" ]
+  ],
+  "lax": [
+    [ "Immediate",    "illegal", "LAX #$??", "AB", "2", "" ],
+    [ "Zero Page",    "illegal", "LAX $??", "A7", "2", "" ],
+    [ "Zero Page,Y",  "illegal", "LAX $??,y", "B7", "2", "" ],
+    [ "Indirect,X",   "illegal", "LAX ($??,x)", "A3", "2", "" ],
+    [ "Indirect,Y",   "illegal", "LAX ($??),y", "B3", "2", "" ],
+    [ "Absolute",     "illegal", "LAX $????", "AF", "3", "" ],
+    [ "Absolute,Y",   "illegal", "LAX $????,y", "BF", "3", "" ]
+  ], 
+  "dcp": [
+    [ "Zero Page",    "illegal", "DCP $??", "C7", "2", "" ],
+    [ "Zero Page,X",  "illegal", "DCP $??,x", "D7", "2", "" ],
+    [ "Indirect,X",   "illegal", "DCP ($??,x)", "C3", "2", "" ],
+    [ "Indirect,Y",   "illegal", "DCP ($??),y", "D3", "3", "" ],
+    [ "Absolute",     "illegal", "DCP $????", "CF", "3", "" ],
+    [ "Absolute,X",   "illegal", "DCP $????,x", "DF", "3", "" ],
+    [ "Absolute,Y",   "illegal", "DCP $????,y", "DB", "3", "" ]
+  ], 
+  "isc": [
+    [ "Zero Page",    "illegal", "ISC $??", "E7", "2", "" ],
+    [ "Zero Page,X",  "illegal", "ISC $??,x", "F7", "2", "" ],
+    [ "Indirect,X",   "illegal", "ISC ($??,x)", "E3", "2", "" ],
+    [ "Indirect,Y",   "illegal", "ISC ($??),y", "F3", "2", "" ],
+    [ "Absolute",     "illegal", "ISC $????", "EF", "3", "" ],
+    [ "Absolute,X",   "illegal", "ISC $????,x", "FF", "3", "" ],
+    [ "Absolute,Y",   "illegal", "ISC $????,y", "FB", "3", "" ]
+  ], 
+  "anc": [
+    [ "Immediate", "illegal", "ANC #$??", "0B", "2", "" ],
+    [ "Immediate", "illegal", "ANC #$??", "2B", "2", "" ]
+  ], 
+  "alr": [
+    [ "Immediate", "illegal", "ALR #$??", "4B", "1", "" ]
+  ], 
+  "arr": [
+    [ "Immediate", "illegal", "ARR #$??", "6B", "2", "" ]
+  ], 
+  "xaa": [
+    [ "Illegal Instruction (highly unstable)", "illegal", "XAA", "8B", "2", "" ]
+  ],
+  "axs": [
+    [ "Illegal Instruction", "illegal", "AXS", "CB", "2", "" ]
+  ],
+  "ahx": [
+    [ "Illegal Instruction (_ahx_ or axa?) (possibly unstable)", "illegal", "AHX", "93", "2", "" ],
+    [ "Illegal Instruction (_ahx_ or axa?) (possibly unstable)", "illegal", "AHX", "9F", "3", "" ]
+  ],
+  "shy": [
+    [ "Absolute,X (possibly unstable)", "illegal", "SHY $????,x", "9C", "3", "" ]
+  ],
+  "shx": [
+    [ "Absolute,Y (possibly unstable)", "illegal", "SHX $????,y", "9E", "3", "" ]
+  ],
+  "tas": [
+    [ "Absolute,Y", "illegal", "TAS $????,y", "9B", "3", "" ]
+  ],
+  "las": [
+    [ "Absolute,Y", "illegal", "LAS $????,y", "BB", "3", "" ]
+  ],
+  "kil": [
+    [ "Zero Page",  "illegal", "KIL $??", "02", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "12", "1", "" ],
+    [ "Zero Page",  "illegal", "KIL $??", "22", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "32", "1", "" ],
+    [ "Zero Page",  "illegal", "KIL $??", "42", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "52", "1", "" ],
+    [ "Zero Page",  "illegal", "KIL $??", "62", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "72", "1", "" ],
+    [ "Implied",    "illegal", "KIL", "92", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "B2", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "D2", "1", "" ],
+    [ "Indirect,Y", "illegal", "KIL ($??),y", "F2", "1", "" ]
+  ]
+} 
