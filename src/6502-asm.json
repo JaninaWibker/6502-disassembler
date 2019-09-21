@@ -333,8 +333,10 @@
     [ "Indirect,X",   "illegal", "SAX ($??,x)", "83", "2", "" ],
     [ "Absolute",     "illegal", "SAX $????", "8F", "3", "" ]
   ],
-  "lax": [
-    [ "Immediate",    "illegal", "LAX #$??", "AB", "2", "" ],
+  "oal": [
+    [ "Immediate",    "illegal", "OAL #$??", "AB", "2", "" ]
+  ],
+  "lax": [  
     [ "Zero Page",    "illegal", "LAX $??", "A7", "2", "" ],
     [ "Zero Page,Y",  "illegal", "LAX $??,y", "B7", "2", "" ],
     [ "Indirect,X",   "illegal", "LAX ($??,x)", "A3", "2", "" ],
@@ -371,14 +373,14 @@
     [ "Immediate", "illegal", "ARR #$??", "6B", "2", "" ]
   ], 
   "xaa": [
-    [ "Illegal Instruction (highly unstable)", "illegal", "XAA", "8B", "2", "" ]
+    [ "Immediate", "illegal", "XAA #$??", "8B", "2", "" ]
   ],
   "axs": [
-    [ "Illegal Instruction", "illegal", "AXS", "CB", "2", "" ]
+    [ "Immediate", "illegal", "AXS #$??", "CB", "2", "" ]
   ],
-  "ahx": [
-    [ "Illegal Instruction (_ahx_ or axa?) (possibly unstable)", "illegal", "AHX", "93", "2", "" ],
-    [ "Illegal Instruction (_ahx_ or axa?) (possibly unstable)", "illegal", "AHX", "9F", "3", "" ]
+  "axa": [
+    [ "Absolute,Y", "illegal", "AXA $????,y", "93", "2", "" ],
+    [ "Absolute",   "illegal", "AXA $????",   "9F", "3", "" ]
   ],
   "shy": [
     [ "Absolute,X (possibly unstable)", "illegal", "SHY $????,x", "9C", "3", "" ]
@@ -406,4 +408,4 @@
     [ "Indirect,Y", "illegal", "KIL ($??),y", "D2", "1", "" ],
     [ "Indirect,Y", "illegal", "KIL ($??),y", "F2", "1", "" ]
   ]
-} 
+}
