@@ -54,3 +54,24 @@ Just `git clone https://github.com/JannikWibker/6502-disassembler` and install d
 ### Dependencies
 
 - **dkjson**: `luarocks install dkjson`
+
+## Notes
+
+There are 2 features planned:
+- better displaying of branch / jump instructions
+- allow not displaying illegal instructions and leave them as raw data (as embedding raw data is not that uncommon and using illegal instructions is pretty rare)
+
+### Format of 6502-asm.json file
+
+The 6502-asm.json file contains definitions for all instructions (even illegal instructions) for the 6502.
+
+The format is as follows (a single mnemonic contains multiple instructions, each is a different version of the same just with another addressing mode)
+```json
+{
+  "<mnemonic>": [
+    ["<addressing mode>", "<legal / illegal>", "<format>", "<opcode (hex)>", "<length>", "<cycle count>"]
+  ]
+}
+```
+
+> There are only a handful of sources for all of the illegal instructions for the 6502, all with differing names and sometimes even functionality. A great effort went into finding all of these oddities and documenting them (as well as implementing at least one version of each instruction in the disassembler). This documentation is only available in german (many parts can be understood without speaking german as it mostly consists of tables with opcodes, mnemonics, ...) and can be found [here](https://docs.jannik.ml/#/microcontroller/6502).
