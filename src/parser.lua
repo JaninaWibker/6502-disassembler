@@ -70,6 +70,11 @@ function parse(definition, input, opts)
     local mnemonic, mode, illegal, format, hex, length, time = find_instruction_by_opcode(definition, opcode)
 
     local str = format
+    if opts.upp then
+      str = string.upper(str)
+    else
+      str = string.lower(str)
+    end
     local args = {}
 
     if length - 1 > 0 then
@@ -77,7 +82,7 @@ function parse(definition, input, opts)
     end
 
     for k,v in pairs(args) do
-      str = string.gsub(str, "%?%?", string.format('%02X', v), 1)
+      str = string.gsub(str, "%?%?", string.format("%02" + (opts.upp and "X" or "x"), v), 1)
     end
 
     -- [memory-address] [hex representation] [instruction] [arguments] ([mode]; [illegal])
@@ -86,7 +91,7 @@ function parse(definition, input, opts)
     end
 
     if opts.hex then
-      local str, changed = util.rpad(string.format("%02X", opcode) .. " " .. (table.concat(args, " ")), 12, ' ')
+      local str, changed = util.rpad(string.format("%02" + (opts.upp and "X" or "x"), opcode) .. " " .. (table.concat(args, " ")), 12, ' ')
       io.write(str)
     end
 

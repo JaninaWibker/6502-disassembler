@@ -81,7 +81,7 @@ function string_meta()
     end
   end
 
-  function string:bin(str)
+  function string:bin()
     if #self == 1 then
       return string.byte(self)
     else
@@ -93,7 +93,7 @@ function string_meta()
     end
   end
 
-  function string:bytes(str)
+  function string:bytes()
     local t={}
     for i=1,#self,1 do
       t[i] = string.byte(self, i)
@@ -101,10 +101,21 @@ function string_meta()
     return t
   end
 
+  function string:starts_with(start)
+    return self:sub(1, #start) == start
+  end
+
+  function string:ends_with(ending)
+    return ending == "" or self:sub(-#ending) == ending
+  end
+
+  function string:trim()
+    return self:match'^()%s*$' and '' or self:match'^%s*(.*%S)'
+  end
 end
 
 function load(filename)
-  return assert(io.open(filename), "rb")
+  return assert(io.open(filename, "rb"), "Cannot read input file \"" + filename + "\". Is it the correct filepath?")
 end
 
 function serializeTable(val, name, skipnewlines, depth)
