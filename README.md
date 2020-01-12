@@ -25,6 +25,7 @@
 > generally flags in upper case can be used to turn off the corresponding lower case flag
 
 > format:  `[memory] [hex] [instruction] [arguments] ([mode]; [illegal])`
+>
 > default: `-uhimA (--uppercase, --hex, --illegal, --mode, --no-address)`
 
 Note that duo to how flags are parsed it is impossible to have filenames starting with hyphens ("-"). This is duo to having to remove the file path from the array of arguments to be parsed which could otherwise lead to problems as the filepath is not required for -v / --version. Thereby disallowing hyphens at the start of filepaths is an easy way out.
@@ -32,7 +33,7 @@ Note that duo to how flags are parsed it is impossible to have filenames startin
 ### Example
 
 ```sh
-lua src/main.lua Super\ Mario\ Bros.\ \(World\).nes
+lua src/main.lua file.nes
 78          SEI             (Implied)
 D8          CLD             (Implied)
 A9 16       LDA #$10        (Immediate)
@@ -46,6 +47,10 @@ AD 32 2     LDA $2002       (Absolute)
 ...
 ```
 
-## Dependencies
+## Install
+
+Just `git clone https://github.com/JannikWibker/6502-disassembler` and install dependencies via luarocks.
+
+### Dependencies
 
 - **dkjson**: `luarocks install dkjson`
