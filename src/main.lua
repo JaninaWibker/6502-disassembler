@@ -3,7 +3,7 @@ local util = require 'src.util'
 
 local version = "0.2"
 
-local opts = { mem = false, hex = true, mod = true, ill = true, upp = false }
+local opts = { mem = false, hex = true, mod = true, ill = true, upp = true }
 -- [memory-address] [hex representation] [instruction] [arguments] ([mode]; [illegal])
 -- upp -> uppercase
 
@@ -26,14 +26,14 @@ function main(args)
       "  -M, --no-mode      " + "Turns --mode OFF\n" +
       "  -a, --address      " + "Display memory addresses in front of everything else\n" +
       "  -A, --no-address   " + "Turns --address OFF\n" +
-      "  -r, --reset        " + "Reset all options to OFF" + 
-      "  -R, --reset-on     " + "Reset all options to ON" + 
-      "  -v, --version      " + "Print version" +
+      "  -r, --reset        " + "Reset all options to OFF\n" + 
+      "  -R, --reset-on     " + "Reset all options to ON\n" + 
+      "  -v, --version      " + "Print version\n" +
       "\n" +
       "generally flags in upper case can be used to turn off the corresponding lower case flag\n" +
       "\n" +
       "format:  [memory] [hex] [instruction] [arguments] ([mode]; [illegal])\n" +
-      "default: -uhimA (--uppercase, --hex, --illegal, --mode, --no-address)"
+      "default: -uhimA (--uppercase, --hex, --illegal, --mode, --no-address)\n"
     )
     return
   elseif #args >= 1 then
@@ -47,15 +47,22 @@ function main(args)
     table.removekey(flags, -1) -- remove "lua" (key -1)
     table.removekey(flags, 0) -- remove "<lua filepath>" (key 0)
 
-    if #args >= 2 then -- this is the default case, only exception is when using --version / -v as no input file has to be specified for that to work
+    -- there are three total possibilities:
+    -- 1. invoked without any flags / options, just the filepath
+    -- 2. invoked with flags / options followed by filepath
+    -- 3. invoked without any flags / options, except -v / --version, filepath is omitted
+    -- it is not really clear wether option 1 or 3 was used. 
+    if #args >= 2 or not(args[#args]:starts_with('-')) then -- 2. / 1.
       table.removekey(flags, #args) -- remove "<nes file>" as it is already saved to filepath
     end
+    -- this means that filepaths cannot start with a "-".
 
     -- using removekey (see util.lua) as it does no reordering inside the table which is what
     -- I want as I don't want to have to adapt the indizes from which to remove from depending
     -- on the order of the remove operation.
-    -- io.write(util.serializeTable(flags))
-    
+    io.write(util.serializeTable(flags))
+    io.write("\n")
+    io.write(filepath)
 
     for key,value in pairs(flags) do
 
@@ -142,8 +149,6 @@ function main(args)
     -- in case the parsed command line options need to be debugged uncomment below
     -- io.write(serializeTable(opts))
 
-  else
-    filepath = args[1]
   end
 
   local input = util.load(filepath)
