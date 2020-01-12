@@ -16,3 +16,7 @@ AD 32 2     LDA $2002       (Absolute)
 10 251      BPL ?$FB        (Relative)
 ...
 ```
+
+## Dependencies
+
+- **dkjson**: `luarocks install dkjson`
