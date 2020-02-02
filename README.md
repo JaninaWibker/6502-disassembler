@@ -4,7 +4,7 @@
 
 `usage: main.lua <optional flags> <file>`
 
-### Flags
+### Flags 🇦🇶
 
 ```
   -u, --uppercase    Turns all instructions and hex values to uppercase (default)
@@ -30,7 +30,7 @@
 
 Note that duo to how flags are parsed it is impossible to have filenames starting with hyphens ("-"). This is duo to having to remove the file path from the array of arguments to be parsed which could otherwise lead to problems as the filepath is not required for -v / --version. Thereby disallowing hyphens at the start of filepaths is an easy way out.
 
-### Example
+### Example 💾
 
 ```sh
 lua src/main.lua file.nes
@@ -55,7 +55,7 @@ Just `git clone https://github.com/JannikWibker/6502-disassembler` and install d
 
 - **dkjson**: `luarocks install dkjson`
 
-## Notes
+## Notes 📝
 
 There are 2 features planned:
 - better displaying of branch / jump instructions
