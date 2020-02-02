@@ -1,5 +1,7 @@
 # NES Disassembler written in Lua
 
+<img src="./6502-disassembler-logo.svg" width="384px" />
+
 ## Usage
 
 `usage: main.lua <optional flags> <file>`
