@@ -49,7 +49,7 @@ AD 32 2     LDA $2002       (Absolute)
 
 ## Install
 
-Just `git clone https://github.com/JannikWibker/6502-disassembler` and install dependencies via luarocks.
+Just `git clone https://github.com/JaninaWibker/6502-disassembler` and install dependencies via luarocks.
 
 ### Dependencies
 
@@ -74,4 +74,4 @@ The format is as follows (a single mnemonic contains multiple instructions, each
 }
 ```
 
-> There are only a handful of sources for all of the illegal instructions for the 6502, all with differing names and sometimes even functionality. A great effort went into finding all of these oddities and documenting them (as well as implementing at least one version of each instruction in the disassembler). This documentation is only available in german (many parts can be understood without speaking german as it mostly consists of tables with opcodes, mnemonics, ...) and can be found [here](https://docs.jannik.ml/#/microcontroller/6502).
+> There are only a handful of sources for all of the illegal instructions for the 6502, all with differing names and sometimes even functionality. A great effort went into finding all of these oddities and documenting them (as well as implementing at least one version of each instruction in the disassembler). This documentation is only available in german (many parts can be understood without speaking german as it mostly consists of tables with opcodes, mnemonics, ...) and can be found [here](https://docs.janina.lol/#/microcontroller/6502).
